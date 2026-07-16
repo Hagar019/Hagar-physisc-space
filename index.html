@@ -263,3 +263,25 @@
     }
   }
 </script>
+
+<script type="module">
+  import { GoogleGenAI } from "https://esm.run";
+
+  // ضعي مفتاح الـ API الخاص بكِ من قوقل هنا بين العلامتين
+  const apiKey = "AQ.Ab8RN6JfCy0nUOMAPpo-i0e_Ed5ZuGQ7AdhRRyJHETtRbVQSRQ";
+  const ai = new GoogleGenAI({ apiKey: apiKey });
+
+  async function askGeminiAI(promptText) {
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash", 
+        contents: promptText,
+      });
+      console.log("استجابة الذكاء الاصطناعي:", response.text);
+      return response.text;
+    } catch (error) {
+      console.error("خطأ في الاتصال بالـ API:", error);
+    }
+  }
+</script>
+
