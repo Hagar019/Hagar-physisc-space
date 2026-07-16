@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "echo 'No build needed'",
-    "start": "http-server . -p $PORT"
+    "start": "http-server . -p $PORT --index studio.html"
   },
   "dependencies": {
     "http-server": "^14.1.1"
